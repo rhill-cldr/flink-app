@@ -7,24 +7,9 @@
   # https://devenv.sh/packages/
   packages = [ pkgs.git ];
 
-  # https://devenv.sh/languages/
-  # languages.rust.enable = true;
-
-  # https://devenv.sh/processes/
-  # processes.cargo-watch.exec = "cargo-watch";
-
-  # https://devenv.sh/services/
-  # services.postgres.enable = true;
-
-  # https://devenv.sh/scripts/
-  scripts.hello.exec = ''
-    echo hello from $GREET
-  '';
-
-  enterShell = ''
-    hello
-    git --version
-  '';
+  languages.java.enable = true;
+  languages.java.jdk.package = pkgs.jdk8;
+  languages.java.maven.enable = true;
 
   # https://devenv.sh/tests/
   enterTest = ''
