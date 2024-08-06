@@ -29,6 +29,6 @@ public class StreamingJob {
 		DataStream<Integer> ds = env.fromElements(1,2,3,4);
 		ds.printToErr();
 
-		env.execute("Flink Streaming Java API Skeleton");
+		env.execute("Flink Streaming Java API");
 	}
 }
