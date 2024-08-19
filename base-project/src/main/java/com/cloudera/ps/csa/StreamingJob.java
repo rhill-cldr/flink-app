@@ -57,8 +57,9 @@ public class StreamingJob {
 				.connect(smokeReadings.broadcast())
 				.flatMap(new RaiseAlertFlatMap());
 
-		DataStream<Integer> ds = env.fromElements(1,2,3,4);
-		ds.printToErr();
+		//DataStream<Integer> ds = env.fromElements(1,2,3,4);
+
+		alerts.printToErr();
 
 		env.execute("Flink Streaming Java API");
 	}
