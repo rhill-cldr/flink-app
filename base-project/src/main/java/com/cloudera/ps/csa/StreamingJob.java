@@ -57,9 +57,72 @@ public class StreamingJob {
 				.connect(smokeReadings.broadcast())
 				.flatMap(new RaiseAlertFlatMap());
 
+		// connect the two streams and raise an alert if the temperature and
+		// smoke levels are high
+		DataStream<Alert> alerts2 = keyedTempReadings
+				.connect(smokeReadings.broadcast())
+				.flatMap(new RaiseAlertFlatMap());
+
+		// connect the two streams and raise an alert if the temperature and
+		// smoke levels are high
+		DataStream<Alert> alerts3 = keyedTempReadings
+				.connect(smokeReadings.broadcast())
+				.flatMap(new RaiseAlertFlatMap());
+
+		// connect the two streams and raise an alert if the temperature and
+		// smoke levels are high
+		DataStream<Alert> alerts4 = keyedTempReadings
+				.connect(smokeReadings.broadcast())
+				.flatMap(new RaiseAlertFlatMap());
+
+		// connect the two streams and raise an alert if the temperature and
+		// smoke levels are high
+		DataStream<Alert> alerts5 = keyedTempReadings
+				.connect(smokeReadings.broadcast())
+				.flatMap(new RaiseAlertFlatMap());
+
+		// connect the two streams and raise an alert if the temperature and
+		// smoke levels are high
+		DataStream<Alert> alerts6 = keyedTempReadings
+				.connect(smokeReadings.broadcast())
+				.flatMap(new RaiseAlertFlatMap());
+
+		// connect the two streams and raise an alert if the temperature and
+		// smoke levels are high
+		DataStream<Alert> alerts7 = keyedTempReadings
+				.connect(smokeReadings.broadcast())
+				.flatMap(new RaiseAlertFlatMap());
+
+		// connect the two streams and raise an alert if the temperature and
+		// smoke levels are high
+		DataStream<Alert> alerts8 = keyedTempReadings
+				.connect(smokeReadings.broadcast())
+				.flatMap(new RaiseAlertFlatMap());
+
+		// connect the two streams and raise an alert if the temperature and
+		// smoke levels are high
+		DataStream<Alert> alerts9 = keyedTempReadings
+				.connect(smokeReadings.broadcast())
+				.flatMap(new RaiseAlertFlatMap());
+
+		// connect the two streams and raise an alert if the temperature and
+		// smoke levels are high
+		DataStream<Alert> alerts10 = keyedTempReadings
+				.connect(smokeReadings.broadcast())
+				.flatMap(new RaiseAlertFlatMap());
+
 		//DataStream<Integer> ds = env.fromElements(1,2,3,4);
 
 		alerts.printToErr();
+		alerts2.printToErr();
+		alerts3.printToErr();
+		alerts4.printToErr();
+		alerts5.printToErr();
+		alerts6.printToErr();
+		alerts7.printToErr();
+		alerts8.printToErr();
+		alerts9.printToErr();
+		alerts10.printToErr();
 
 		env.execute("Flink Streaming Java API");
 	}
