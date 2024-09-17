@@ -20,17 +20,29 @@ package com.cloudera.ps.csa;
 
 import com.cloudera.ps.csa.util.*;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
+import org.apache.flink.configuration.Configuration;
+import org.apache.flink.configuration.RestartStrategyOptions;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.KeyedStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.co.CoFlatMapFunction;
 import org.apache.flink.util.Collector;
 
+import java.time.Duration;
+
 
 public class StreamingJob {
 
 	public static void main(String[] args) throws Exception {
-		final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+
+		Configuration config = new Configuration();
+		config.set(RestartStrategyOptions.RESTART_STRATEGY, "exponential-delay");
+		config.set(RestartStrategyOptions.RESTART_STRATEGY_EXPONENTIAL_DELAY_INITIAL_BACKOFF, Duration.ofMillis(1));
+		config.set(RestartStrategyOptions.RESTART_STRATEGY_EXPONENTIAL_DELAY_MAX_BACKOFF, Duration.ofMillis(1000));
+		config.set(RestartStrategyOptions.RESTART_STRATEGY_EXPONENTIAL_DELAY_BACKOFF_MULTIPLIER, 1.1); // exponential multiplier
+		config.set(RestartStrategyOptions.RESTART_STRATEGY_EXPONENTIAL_DELAY_RESET_BACKOFF_THRESHOLD, Duration.ofMillis(2000)); // threshold duration to reset delay to its initial value
+		config.set(RestartStrategyOptions.RESTART_STRATEGY_EXPONENTIAL_DELAY_JITTER_FACTOR, 0.1); // jitter
+		StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment(config);
 
 		// configure watermark interval
 		env.getConfig().setAutoWatermarkInterval(1000L);
@@ -47,6 +59,62 @@ public class StreamingJob {
 				.addSource(new SmokeLevelSource())
 				.setParallelism(1);
 
+
+		// ingest smoke level stream
+		DataStream<SmokeLevel> smokeReadings2 = env
+				.addSource(new SmokeLevelSource())
+				.setParallelism(1);
+
+
+		// ingest smoke level stream
+		DataStream<SmokeLevel> smokeReadings3 = env
+				.addSource(new SmokeLevelSource())
+				.setParallelism(1);
+
+
+		// ingest smoke level stream
+		DataStream<SmokeLevel> smokeReadings4 = env
+				.addSource(new SmokeLevelSource())
+				.setParallelism(1);
+
+
+		// ingest smoke level stream
+		DataStream<SmokeLevel> smokeReadings5 = env
+				.addSource(new SmokeLevelSource())
+				.setParallelism(1);
+
+
+		// ingest smoke level stream
+		DataStream<SmokeLevel> smokeReadings6 = env
+				.addSource(new SmokeLevelSource())
+				.setParallelism(1);
+
+
+		// ingest smoke level stream
+		DataStream<SmokeLevel> smokeReadings7 = env
+				.addSource(new SmokeLevelSource())
+				.setParallelism(1);
+
+
+		// ingest smoke level stream
+		DataStream<SmokeLevel> smokeReadings8 = env
+				.addSource(new SmokeLevelSource())
+				.setParallelism(1);
+
+
+		// ingest smoke level stream
+		DataStream<SmokeLevel> smokeReadings9 = env
+				.addSource(new SmokeLevelSource())
+				.setParallelism(1);
+
+
+		// ingest smoke level stream
+		DataStream<SmokeLevel> smokeReadings10 = env
+				.addSource(new SmokeLevelSource())
+				.setParallelism(1);
+
+
+
 		// group sensor readings by sensor id
 		KeyedStream<SensorReading, String> keyedTempReadings = tempReadings
 				.keyBy(r -> r.id);
@@ -60,55 +128,55 @@ public class StreamingJob {
 		// connect the two streams and raise an alert if the temperature and
 		// smoke levels are high
 		DataStream<Alert> alerts2 = keyedTempReadings
-				.connect(smokeReadings.broadcast())
+				.connect(smokeReadings2.broadcast())
 				.flatMap(new RaiseAlertFlatMap());
 
 		// connect the two streams and raise an alert if the temperature and
 		// smoke levels are high
 		DataStream<Alert> alerts3 = keyedTempReadings
-				.connect(smokeReadings.broadcast())
+				.connect(smokeReadings3.broadcast())
 				.flatMap(new RaiseAlertFlatMap());
 
 		// connect the two streams and raise an alert if the temperature and
 		// smoke levels are high
 		DataStream<Alert> alerts4 = keyedTempReadings
-				.connect(smokeReadings.broadcast())
+				.connect(smokeReadings4.broadcast())
 				.flatMap(new RaiseAlertFlatMap());
 
 		// connect the two streams and raise an alert if the temperature and
 		// smoke levels are high
 		DataStream<Alert> alerts5 = keyedTempReadings
-				.connect(smokeReadings.broadcast())
+				.connect(smokeReadings5.broadcast())
 				.flatMap(new RaiseAlertFlatMap());
 
 		// connect the two streams and raise an alert if the temperature and
 		// smoke levels are high
 		DataStream<Alert> alerts6 = keyedTempReadings
-				.connect(smokeReadings.broadcast())
+				.connect(smokeReadings6.broadcast())
 				.flatMap(new RaiseAlertFlatMap());
 
 		// connect the two streams and raise an alert if the temperature and
 		// smoke levels are high
 		DataStream<Alert> alerts7 = keyedTempReadings
-				.connect(smokeReadings.broadcast())
+				.connect(smokeReadings7.broadcast())
 				.flatMap(new RaiseAlertFlatMap());
 
 		// connect the two streams and raise an alert if the temperature and
 		// smoke levels are high
 		DataStream<Alert> alerts8 = keyedTempReadings
-				.connect(smokeReadings.broadcast())
+				.connect(smokeReadings8.broadcast())
 				.flatMap(new RaiseAlertFlatMap());
 
 		// connect the two streams and raise an alert if the temperature and
 		// smoke levels are high
 		DataStream<Alert> alerts9 = keyedTempReadings
-				.connect(smokeReadings.broadcast())
+				.connect(smokeReadings9.broadcast())
 				.flatMap(new RaiseAlertFlatMap());
 
 		// connect the two streams and raise an alert if the temperature and
 		// smoke levels are high
 		DataStream<Alert> alerts10 = keyedTempReadings
-				.connect(smokeReadings.broadcast())
+				.connect(smokeReadings10.broadcast())
 				.flatMap(new RaiseAlertFlatMap());
 
 		//DataStream<Integer> ds = env.fromElements(1,2,3,4);
