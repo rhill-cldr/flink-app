@@ -1,0 +1,20 @@
+[project]
+name = "flink-sizing"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "dacite>=1.8.1",
+  "ortools",
+  "pyhocon>=0.3.61",
+  "rich",
+  "textual",
+  "textual-dev",
+  "typer>=0.15.1",
+  "typing_extensions",
+  "platformdirs",
+  "jinja2",
+  "markupsafe",
+]
+

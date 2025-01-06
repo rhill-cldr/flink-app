@@ -1,0 +1,11 @@
+[bold green]Cluster Sizing Results:[/bold green]
+ - Required Memory: {{ memory_text }}
+ - Required vCores: {{ required_vcores }}
+ - Minimal Server Allocation:
+{% for server_type, quantity in server_allocation.items() if quantity > 0 %}
+   - {{ server_type }}: {{ quantity }} units
+{% endfor %}
+ - Total Cost per Hour: ${{'%0.2f'| format(total_cost|float)}}
+
+ [dim]Based on {{ num_jobs }} job(s) with {{ num_tasks }} total tasks[/dim]
+
