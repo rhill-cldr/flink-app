@@ -1,0 +1,8 @@
+{% if required_memory < 1024 %}
+    {% set memory_text = "{:.2f} GiB"|format(required_memory) %}
+{% else %}
+    {% set memory_text = "{:.2f} TB"|format(required_memory / 1024) %}
+{% endif %}
+{% set memory_text = memory_text.strip() %}
+{{ memory_text }}
+

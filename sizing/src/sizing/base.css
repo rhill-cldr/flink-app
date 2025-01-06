@@ -1,0 +1,25 @@
+ Grid {
+     grid-size: 2;
+     grid-gutter: 1;
+     padding: 1;
+ }
+ #container {
+     width: 100%;
+     height: auto;
+     padding: 1;
+ }
+ InputGroup {
+     width: 100%;
+     height: auto;
+     margin: 1 0 0 0;
+ }
+ .result {
+     padding: 1;
+     background: $surface;
+     border: tall $primary;
+     margin: 1;
+ }
+ Button {
+     margin: 1;
+ }
+

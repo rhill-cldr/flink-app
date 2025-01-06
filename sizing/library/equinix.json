@@ -1,0 +1,115 @@
+[
+    {"server_type": "c3.small.x86", "price_hr": 0.75,
+"hardware": {
+    "cpu_qty": 1,
+    "cpu_cores": 8,
+    "cpu_freq": "3.40GHz",
+    "cpu_type": "Intel Xeon E-2278G",
+    "ram": "32GB",
+    "storage": [{"size": "480GB","type":"SSD","qty":2}],
+    "network": "2x 10Gbps",
+    "graphics": "1x Intel HD Graphics P630"
+}},
+    {"server_type": "m3.small.x86", "price_hr": 1.05,
+"hardware": {
+    "cpu_qty": 1,
+    "cpu_cores": 8,
+    "cpu_freq": "3.40GHz",
+    "cpu_type": "Intel Xeon E-2278G",
+    "ram": "32GB",
+    "storage": [{"qty":2,"size":"480GB","type":"SSD"}],
+    "network": "2x 10Gbps",
+    "graphics": "1x Intel HD Graphics P630"
+}},
+    {"server_type": "c2.medium.x86", "price_hr": 1.10,
+"hardware": {
+    "cpu_qty": 1,
+    "cpu_cores": 24,
+    "cpu_freq": "2.00GHz",
+    "cpu_type": "AMD EPYC 7401P",
+    "ram": "64GB",
+    "storage": [{"qty":2,"size":"120GB","type":"SSD"}, {"qty":2,"size":"480GB","type":"SSD"}],
+    "network": "2x 10Gbps"
+}},
+    {"server_type": "c3.medium.x86", "price_hr": 1.50,
+"hardware": {
+    "cpu_qty": 1,
+    "cpu_cores": 24,
+    "cpu_freq": "2.80GHz",
+    "cpu_type": "AMD EPYC 7402P",
+    "ram": "64GB",
+    "storage": [{"qty":2,"size":"240GB","type":"SSD"}, {"qty":2,"size":"480GB","type":"SSD"}],
+    "network": "2x 10Gbps"
+}},
+    {"server_type": "n2.xlarge.x86", "price_hr": 2.45,
+"hardware": {
+    "cpu_qty": 2,
+    "cpu_cores": 14,
+    "cpu_freq": "2.20GHz",
+    "cpu_type": "Intel Xeon Gold 5120",
+    "ram": "384GB",
+    "storage": [{"qty":2,"size":"120GB","type":"SSD"}, {"qty":1,"size":"3.8TB","type":"NVME"}],
+    "network": "4x 10Gbps"
+}},
+    {"server_type": "c3.large.arm64", "price_hr": 2.50,
+"hardware": {
+    "cpu_qty": 1,
+    "cpu_cores": 80,
+    "cpu_freq": "3.00GHz",
+    "cpu_type": "Ampere Altra Q80-30",
+    "ram": "256GB",
+    "storage": [{"qty":2,"size":"960GB","type":"NVME"}],
+    "network": "2x 25Gbps"
+}},
+    {"server_type": "m2.xlarge.x86", "price_hr": 2.90,
+"hardware": {
+    "cpu_qty": 2,
+    "cpu_cores": 14,
+    "cpu_freq": "2.20GHz",
+    "cpu_type": "Intel Xeon Gold 5120",
+    "ram": "384GB",
+    "storage": [{"qty":2,"size":"120GB","type":"SSD"}, {"qty":1,"size":"3.8TB","type":"NVME"}],
+    "network": "2x 10Gbps"
+}},
+    {"server_type": "s3.xlarge.x86", "price_hr": 2.95,
+"hardware": {
+    "cpu_qty": 2,
+    "cpu_cores": 24,
+    "cpu_freq": "2.20GHz",
+    "cpu_type": "Intel Xeon Silver 4214",
+    "ram": "192GB",
+    "storage": [{"qty":2,"size":"960GB","type":"SSD"}, {"qty":2,"size":"240GB","type":"NVME"}, {"qty":12,"size":"8TB","type":"HDD"}],
+    "network": "2x 10Gbps"
+}},
+    {"server_type": "m3.large.x86", "price_hr": 3.10,
+"hardware": {
+    "cpu_qty": 1,
+    "cpu_cores": 32,
+    "cpu_freq": "2.50GHz",
+    "cpu_type": "AMD EPYC 7502P",
+    "ram": "256GB",
+    "storage": [{"qty":2,"size":"240GB","type":"SSD"}, {"qty":2,"size":"3.8TB","type":"NVME"}],
+    "network": "2x 25Gbps"
+}},
+    {"server_type": "n3.xlarge.x86", "price_hr": 4.50,
+"hardware": {
+    "cpu_qty": 1,
+    "cpu_cores": 32,
+    "cpu_freq": "2.30GHz",
+    "cpu_type": "Intel Xeon Gold 6314U",
+    "ram": "512GB",
+    "storage": [{"qty":2,"size":"256GB","type":"NVME"}, {"qty":2,"size":"3.84TB","type":"NVME"}],
+    "network": "4x 25Gbps"
+}},
+    {"server_type": "g2.large.x86", "price_hr": 5.00,
+"hardware": {
+    "cpu_qty": 2,
+    "cpu_cores": 24,
+    "cpu_freq": "2.60GHz",
+    "cpu_type": "Intel Xeon Gold 6126",
+    "ram": "192GB",
+    "storage": [{"qty":1,"size":"150GB","type":"SSD"}, {"qty":2,"size":"480GB","type":"SSD"}],
+    "network": "2x 10Gbps"
+}}
+]
+
